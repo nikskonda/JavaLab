@@ -9,7 +9,7 @@ package by.bntu.fitr.nikShk.model.entity;
  *
  * @author niksk
  */
-public class Song {
+public class Song implements Comparable<Song>{
 
     private String name;
     private String type;
@@ -79,6 +79,37 @@ public class Song {
         }
     }
 
+    @Override
+    public int compareTo(Song o) {
+        return this.name.compareTo(o.name);
+    }
+    
+    
+    
+//    @Override
+//    public boolean equals(Object obj) {
+//        if (obj == null)
+//            return false;
+//	if (getClass() != obj.getClass())
+//            return false;
+//        Song s = (Song)obj;
+//	if (!this.name.equals(s.name))
+//            return false;
+//        if (this.time != s.time)
+//            return false;
+//        if (!this.type.equals(s.type))
+//            return false;
+//	return true;
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return super.hashCode(); 
+//    }
+    
+    
+    
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Audio: ").append(this.name).append(". Type: ")

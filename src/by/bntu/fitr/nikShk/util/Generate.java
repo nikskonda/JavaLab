@@ -13,19 +13,19 @@ import java.util.Random;
  * @author niksk
  */
 public class Generate {
-    public static BoxWithDiscs creatBox(String nameBox) {     
-        BoxWithDiscs box = new BoxWithDiscs(nameBox);
+    public static by.bntu.fitr.nikShk.model.entityWithCollection.BoxWithDiscs creatBox(String nameBox) {     
+        by.bntu.fitr.nikShk.model.entityWithCollection.BoxWithDiscs box = new by.bntu.fitr.nikShk.model.entityWithCollection.BoxWithDiscs(nameBox);
         int qnt = genInt(5, 10);
         for (int j = 0; j< qnt; j++){
-            String[] name = new String[]{"Best audio", "VikVIk audio", "Sinitsa audios", "Lenovo"};
-            AudioList a = new AudioList(name[genInt(0, 4)]);
+            String[] name = new String[]{"Best audio", "VikVIk audio", "Sinitsa audios", "Lenovo", "NikAudio", "CarAudio"};
+            by.bntu.fitr.nikShk.model.entityWithCollection.AudioList a = new by.bntu.fitr.nikShk.model.entityWithCollection.AudioList(name[genInt(0, name.length)]);
             int len = genInt(5, 10);
             String[] nameSinger = new String[]{"Live", "Big tree ", "BNTU", "LitleBig", 
                 "MOGILEV forewre", "Gomel forewer", "PineApple", "AAAAA"};
             for (int i = 0; i < len; i++) {
                 switch (genInt(0, 4)) {
                     case 0:
-                        a.addSong(new Song(nameSinger[genInt(0, 8)], "Remix", genInt(60, 300)));
+                        a.addSong(new Song(nameSinger[genInt(0, nameSinger.length)], "Remix", genInt(60, 300)));
                         break;
                     case 1:
                         a.addSong(new RockSong(nameSinger[genInt(0, 8)], genInt(60, 300), genInt(1, 10), genInt(1, 10)));

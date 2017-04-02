@@ -29,17 +29,17 @@ public class AudioList {
             
             
     public int qntSongs(){
-        return songs.qntObject();
+        return getSongs().qntObject();
     }
     
     public void addSong(Song song){
-        this.songs.add(song);
+        this.getSongs().add(song);
         
     }
     
     public Song getSongOfIndex(int index){
-        Object[] tempO = this.songs.getAsArray();
-        int len = this.songs.qntObject();
+        Object[] tempO = this.getSongs().getAsArray();
+        int len = this.getSongs().qntObject();
         Song[] temp = new Song[len];
         
         for (int i = 0; i<len;i++){
@@ -54,8 +54,8 @@ public class AudioList {
     }
     
     public void setSongOfIndex(Song song, int index){
-        Object[] tempO = this.songs.getAsArray();
-        int len = this.songs.qntObject();
+        Object[] tempO = this.getSongs().getAsArray();
+        int len = this.getSongs().qntObject();
         Song[] temp = new Song[len];
         
         for (int i = 0; i<len;i++){
@@ -64,7 +64,7 @@ public class AudioList {
         
         if (index >= 0 && index < temp.length) {
             temp[index] = song;
-            this.songs = new Stack<>(temp);
+            this.setSongs(new Stack<>(temp));
         } else {
             throw new AudioListIndexException();
         }
@@ -72,6 +72,20 @@ public class AudioList {
     
     @Override
     public String toString(){       
-        return this.songs.toString();
+        return this.getSongs().toString();
+    }
+
+    /**
+     * @return the songs
+     */
+    public Stack<Song> getSongs() {
+        return songs;
+    }
+
+    /**
+     * @param songs the songs to set
+     */
+    public void setSongs(Stack<Song> songs) {
+        this.songs = songs;
     }
 }
