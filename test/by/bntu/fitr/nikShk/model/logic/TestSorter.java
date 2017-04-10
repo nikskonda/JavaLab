@@ -43,13 +43,22 @@ public class TestSorter {
 //        box2.addAudioList(a2);
 //        box2.addAudioList(a3);
 //        box2.addAudioList(a4);
-//        Sorter.sort(box, TypesOfSorts.NAME_ASC);
+        Sorter.sort(box, TypesOfSorts.NAME_ASC);
 //        assertEquals(box2, box);
+        assertEquals(a1, this.box.getAudioListOfIndex(0));
+        assertEquals(a2, this.box.getAudioListOfIndex(1));
+        assertEquals(a3, this.box.getAudioListOfIndex(2));
+        assertEquals(a4, this.box.getAudioListOfIndex(3));
     }
     
     @Test
     public void testSortDEC(){
-        
+        Sorter.sort(box, TypesOfSorts.NAME_DEC);
+//        assertEquals(box2, box);
+        assertEquals(a1, this.box.getAudioListOfIndex(3));
+        assertEquals(a2, this.box.getAudioListOfIndex(2));
+        assertEquals(a3, this.box.getAudioListOfIndex(1));
+        assertEquals(a4, this.box.getAudioListOfIndex(0));
     }
 
     

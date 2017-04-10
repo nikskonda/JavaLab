@@ -5,6 +5,10 @@
  */
 package by.bntu.fitr.nikShk.model.logic;
 
+import by.bntu.fitr.nikShk.model.comparable.SortAudioListNameASC;
+import by.bntu.fitr.nikShk.model.comparable.SortAudioListNameDEC;
+import by.bntu.fitr.nikShk.model.comparable.SortAudioListTimeASC;
+import by.bntu.fitr.nikShk.model.comparable.SortAudioListTimeDEC;
 import by.bntu.fitr.nikShk.model.entity.Song;
 //import by.bntu.fitr.nikShk.model.entityWithCollection.AudioList;
 import by.bntu.fitr.nikShk.model.entity.TypesOfSorts;
@@ -74,36 +78,16 @@ public class Sorter {
     public static void sort(BoxWithDiscs box, TypesOfSorts sort){
         switch (sort){
             case NAME_ASC:
-                Collections.sort((List<AudioList>) box.getAudioLists(), new Comparator<AudioList>() {
-                    @Override
-                    public int compare(AudioList o1, AudioList o2) {
-                        return o1.getName().compareTo(o2.getName());
-                    }
-                });
+                Collections.sort((List<AudioList>) box.getAudioLists(), new SortAudioListNameASC());
                 break;
             case NAME_DEC:
-                Collections.sort((List<AudioList>) box.getAudioLists(), new Comparator<AudioList>() {
-                    @Override
-                    public int compare(AudioList o1, AudioList o2) {
-                        return o2.getName().compareTo(o1.getName());
-                    }
-                });
+                Collections.sort((List<AudioList>) box.getAudioLists(), new SortAudioListNameDEC());
                 break; 
             case TIME_ASC:
-                Collections.sort((List<AudioList>) box.getAudioLists(), new Comparator<AudioList>() {
-                    @Override
-                    public int compare(AudioList o1, AudioList o2) {
-                        return o1.getTimeAll() - o2.getTimeAll();
-                    }
-                });
+                Collections.sort((List<AudioList>) box.getAudioLists(), new SortAudioListTimeASC());
                 break;
             case TIME_DEC:
-                Collections.sort((List<AudioList>) box.getAudioLists(), new Comparator<AudioList>() {
-                    @Override
-                    public int compare(AudioList o1, AudioList o2) {
-                        return o2.getTimeAll() - o1.getTimeAll();
-                    }
-                });
+                Collections.sort((List<AudioList>) box.getAudioLists(), new SortAudioListTimeDEC());
                 break;
         }
     }

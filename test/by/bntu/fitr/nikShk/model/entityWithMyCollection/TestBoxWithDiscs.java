@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package by.bntu.fitr.nikShk.model.testEntity;
+package by.bntu.fitr.nikShk.model.entityWithMyCollection;
 
+import by.bntu.fitr.nikShk.model.entutyWithMyCollection.BoxWithDiscs;
+import by.bntu.fitr.nikShk.model.entutyWithMyCollection.AudioList;
 import by.bntu.fitr.nikShk.exception.DiscsIndexException;
 import org.junit.After;
 import org.junit.Before;

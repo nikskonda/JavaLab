@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package by.bntu.fitr.nikShk.model.testEntity;
+package by.bntu.fitr.nikShk.model.entutyWithMyCollection;
 
 import by.bntu.fitr.nikShk.exception.AudioListIndexException;
 import by.bntu.fitr.nikShk.model.entity.Song;
