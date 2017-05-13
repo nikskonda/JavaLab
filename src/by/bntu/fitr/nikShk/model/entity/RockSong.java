@@ -5,11 +5,13 @@
  */
 package by.bntu.fitr.nikShk.model.entity;
 
+import java.io.Serializable;
+
 /**
  *
  * @author niksk
  */
-public class RockSong extends Song {
+public class RockSong extends Song implements Serializable {
 
     private int gitars;
     private int drumbabum;
@@ -64,7 +66,10 @@ public class RockSong extends Song {
 
     public String toString() {
         StringBuilder sb = new StringBuilder(super.toString());
-        sb.append(" Gitars:").append(this.gitars).append("qnts. Drumbum:").append(this.drumbabum).append("qnts.");
+        sb.append(" ").append(SongsConst.GITARS).append(":")
+            .append(this.gitars).append(SongsConst.QNT).append(". ")
+                .append(SongsConst.DRUMBUM).append(": ").append(this.drumbabum)
+                .append(SongsConst.QNT).append(".");
         return sb.toString();
     }
 

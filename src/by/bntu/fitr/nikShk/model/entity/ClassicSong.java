@@ -5,11 +5,13 @@
  */
 package by.bntu.fitr.nikShk.model.entity;
 
+import java.io.Serializable;
+
 /**
  *
  * @author niksk
  */
-public class ClassicSong extends Song{ 
+public class ClassicSong extends Song implements Serializable{ 
     
     private int violine;
     private int piano;
@@ -65,7 +67,10 @@ public class ClassicSong extends Song{
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder(super.toString());
-        sb.append(" Violine:").append(this.violine).append("qnts. Piano:").append(this.piano).append("qnts.");
+        sb.append(" ").append(SongsConst.VIOLINE).append(":")
+                .append(this.violine).append(SongsConst.QNT).append(". ")
+                .append(SongsConst.PIANO).append(": ").append(this.piano)
+                .append(SongsConst.QNT).append(".");
         return sb.toString();
     }
 }

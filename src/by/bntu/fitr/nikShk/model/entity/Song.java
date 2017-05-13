@@ -5,24 +5,26 @@
  */
 package by.bntu.fitr.nikShk.model.entity;
 
+import java.io.Serializable;
+
 /**
  *
  * @author niksk
  */
-public class Song implements Comparable<Song>{
+public class Song implements Comparable<Song>, Serializable{
 
     private String name;
     private String type;
     private int time;
 
     public Song() {
-        this.name = "Song";
+        this.name = SongsConst.SONG;
         this.type = Types.SONG.toString();
         this.time = 1;
     }
 
     protected Song(String type){
-        this.name = "Song";
+        this.name = SongsConst.SONG;
         this.type = type;
         this.time = 1;
     }
@@ -112,9 +114,9 @@ public class Song implements Comparable<Song>{
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Audio: ").append(this.name).append(". Type: ")
-                .append(this.type).append(". Time: ")
-                .append(this.time).append("sec.");
+        sb.append(SongsConst.AUDIO).append(": ").append(this.name).append(". ").append(SongsConst.TYPE).append(": ")
+                .append(this.type).append(". ").append(SongsConst.TIME).append(": ")
+                .append(this.time).append(SongsConst.SEC).append(".");
         return sb.toString();
 
     }

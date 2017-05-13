@@ -16,7 +16,7 @@ public class BoxWithDiscs {
     private AudioList[] audioLists;
     
     public BoxWithDiscs(){
-        this.name = "Box";
+        this.name = SongsConst.BOX;
         this.audioLists = new AudioList[0];
     }
     

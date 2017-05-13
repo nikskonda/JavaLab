@@ -7,12 +7,16 @@ package by.bntu.fitr.nikShk.model.entutyWithMyCollection;
 
 import by.bntu.fitr.nikShk.exception.DiscsIndexException;
 import by.bntu.fitr.nikShk.util.array.Queue;
+import java.io.Externalizable;
+import java.io.IOException;
+import java.io.ObjectInput;
+import java.io.ObjectOutput;
 
 /**
  *
  * @author niksk
  */
-public class BoxWithDiscs {
+public class BoxWithDiscs implements Externalizable{
     private String name;
     private Queue<AudioList> audioLists;
     
@@ -76,5 +80,17 @@ public class BoxWithDiscs {
             sb.append(temp.cut()).append("\n");
         }
         return sb.toString();
+    }
+
+    @Override
+    public void writeExternal(ObjectOutput out) throws IOException {
+        out.writeObject(this.name);
+        out.writeObject(this.audioLists);
+    }
+
+    @Override
+    public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
+        this.name = (String)in.readObject();
+        this.audioLists = (Queue<AudioList>)in.readObject();
     }
 }

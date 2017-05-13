@@ -7,18 +7,20 @@ package by.bntu.fitr.nikShk.model.entityWithCollection;
 
 import by.bntu.fitr.nikShk.exception.AudioListIndexException;
 import by.bntu.fitr.nikShk.model.entity.Song;
+import by.bntu.fitr.nikShk.model.entity.SongsConst;
+import java.io.Serializable;
 import java.util.*;
 
 /**
  *
  * @author niksk
  */
-public class AudioList implements Iterable<Song>{
+public class AudioList implements Iterable<Song>, Serializable{
    private String name;
     private Set<Song> songs;
     
     public AudioList(){
-        this.name = "AudioList";
+        this.name = SongsConst.AUDIOLIST;
         this.songs = new HashSet();
     }
     
@@ -56,7 +58,7 @@ public class AudioList implements Iterable<Song>{
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder(this.getName());
-        sb.append(" ").append(this.getTimeAll()).append("sec:\n");
+        sb.append(" ").append(this.getTimeAll()).append(SongsConst.SEC).append(":\n");
         for (int i = 0; i < this.getSongs().size(); i++) {
             sb.append(this.getSongOfIndex(i)).append("\n");
         }

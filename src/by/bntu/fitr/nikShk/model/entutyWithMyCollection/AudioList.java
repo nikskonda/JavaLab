@@ -8,12 +8,16 @@ package by.bntu.fitr.nikShk.model.entutyWithMyCollection;
 import by.bntu.fitr.nikShk.exception.AudioListIndexException;
 import by.bntu.fitr.nikShk.model.entity.Song;
 import by.bntu.fitr.nikShk.util.array.Stack;
+import java.io.Externalizable;
+import java.io.IOException;
+import java.io.ObjectInput;
+import java.io.ObjectOutput;
 
 /**
  *
  * @author niksk
  */
-public class AudioList {
+public class AudioList implements Externalizable{
     private String name;
     private Stack<Song> songs;
     
@@ -87,5 +91,17 @@ public class AudioList {
      */
     public void setSongs(Stack<Song> songs) {
         this.songs = songs;
+    }
+
+    @Override
+    public void writeExternal(ObjectOutput out) throws IOException {
+        out.writeObject(this.name);
+//        out.writeObject(this.songs);
+    }
+
+    @Override
+    public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
+        this.name = (String)in.readObject();
+//        this.songs = (Stack<Song>)in.readObject();
     }
 }

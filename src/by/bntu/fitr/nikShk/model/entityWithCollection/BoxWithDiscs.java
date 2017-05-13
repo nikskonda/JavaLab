@@ -6,6 +6,9 @@
 package by.bntu.fitr.nikShk.model.entityWithCollection;
 
 import by.bntu.fitr.nikShk.exception.DiscsIndexException;
+import by.bntu.fitr.nikShk.model.entity.SongsConst;
+import java.io.Externalizable;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -14,12 +17,12 @@ import java.util.List;
  *
  * @author niksk
  */
-public class BoxWithDiscs implements Iterable<AudioList>{
+public class BoxWithDiscs implements Iterable<AudioList>, Serializable{
     private String name;
     private List<AudioList> audioLists;
     
     public BoxWithDiscs(){
-        this.name = "Box";
+        this.name = SongsConst.BOX;
         this.audioLists = new ArrayList<>();
     }
     

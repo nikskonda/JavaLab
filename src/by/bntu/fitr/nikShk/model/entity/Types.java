@@ -5,6 +5,8 @@
  */
 package by.bntu.fitr.nikShk.model.entity;
 
+import com.sun.org.apache.bcel.internal.generic.SWAP;
+
 /**
  *
  * @author nikita
@@ -14,6 +16,24 @@ public enum Types {
     
     @Override
     public String toString(){
-        return name().charAt(0) + name().substring(1).toLowerCase();
+        String s = "";
+        switch (valueOf(name())){
+            case ROCK:
+                s =  SongsConst.ROCK;
+                break;
+            case CLASSIC:
+                s =  SongsConst.CLASSIC;
+                break;
+            case RAP:
+                s=  SongsConst.RAP;
+                break;
+            case REMIX:
+                s = SongsConst.REMIX;
+                break;
+            case SONG:
+                s = SongsConst.SONG;
+                break;
+        }
+        return s;
     }
 }

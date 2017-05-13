@@ -12,7 +12,7 @@ import by.bntu.fitr.nikShk.Interface.Container;
  * @author niksk
  * @param <T>
  */
-public class Queue<T> implements Container<T> {
+public class Queue<T> implements Container<T>{
 
     private ObjectQueue firstObject;
     private ObjectQueue lastObject;

@@ -5,19 +5,22 @@
  */
 package by.bntu.fitr.nikShk.model.entity;
 
+import java.io.Serializable;
+
 /**
  *
  * @author niksk
  */
-public class RapSong extends Song{
+public class RapSong extends Song implements Serializable {
+
     private int bitboxers;
-    
-    public RapSong(){
+
+    public RapSong() {
         super(Types.RAP.toString());
         this.bitboxers = 1;
     }
-    
-    public RapSong(String name, int time, int bitboxers){
+
+    public RapSong(String name, int time, int bitboxers) {
         super(name, Types.RAP.toString(), time);
         this.bitboxers = bitboxers;
     }
@@ -39,11 +42,12 @@ public class RapSong extends Song{
             throw new IndexOutOfBoundsException();
         }
     }
-    
+
     @Override
-    public String toString(){
+    public String toString() {
         StringBuilder sb = new StringBuilder(super.toString());
-        sb.append(" Bitboxers:").append(this.bitboxers).append("qnts.");
+        sb.append(" ").append(SongsConst.BITBOXER).append(":")
+                .append(this.bitboxers).append(SongsConst.QNT).append(".");
         return sb.toString();
     }
 }

@@ -16,7 +16,7 @@ public class AudioList {
     private Song[] songs;
     
     public AudioList(){
-        this.name = "AudioList";
+        this.name = SongsConst.AUDIOLIST;
         this.songs = new Song[0];
     }
     

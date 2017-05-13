@@ -5,12 +5,14 @@
  */
 package by.bntu.fitr.nikShk.util.array;
 
+import java.io.Externalizable;
+
 /**
  *
  * @author niksk
  * @param <T>
  */
-public class ObjectQueue<T> {
+public class ObjectQueue<T>{
     public T object;
     public ObjectQueue<T> nextObject;
     
